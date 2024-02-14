@@ -44,5 +44,29 @@ class MainActivity : AppCompatActivity() {
         Storage.setNumber(savedInstanceState.getInt("valueCounter"))
     }
 
+    override fun onResume() {
+        super.onResume()
+        Log.i("MainActivity", "onResume")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("MainActivity", "onStart")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("MainActivity", "onStop")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("MainActivity", "onPause")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("MainActivity", "onDestroy")
+    }
 
 }
