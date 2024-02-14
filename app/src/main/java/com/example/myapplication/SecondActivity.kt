@@ -11,7 +11,7 @@ import kotlin.math.pow
 class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i("SecondActivity", "Отрисовка второй страницы")
+        Log.i("SecondActivity", "onCreate")
         setContentView(R.layout.activity_second)
         findViewById<TextView>(R.id.textView2).text =
             Storage.getNumber().toDouble().pow(2.toDouble()).toString()

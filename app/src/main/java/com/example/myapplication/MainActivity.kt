@@ -11,11 +11,8 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
 
 
@@ -28,13 +25,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(sendIntent)
         }
 
-        Log.i("MainActivity", "Отрисовка главной страницы")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.i("MainActivity", "Отрисовка главной страницы после закрытия второй")
-        findViewById<TextView>(R.id.textView).text = Storage.getNumber().toString()
+        Log.i("MainActivity", "onCreate")
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -42,18 +33,16 @@ class MainActivity : AppCompatActivity() {
             Log.i("MainActivity", "+1 к значению")
             Storage.plusNumber()
         }
-        Log.i("MainActivity", "Сохранение состояний в Bundle")
+        Log.i("MainActivity", "onSaveInstanceState")
         outState.putInt("valueCounter", Storage.getNumber())
         super.onSaveInstanceState(outState)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        Log.i("MainActivity", "Востановление состояний из Bundle")
+        Log.i("MainActivity", "onRestoreInstanceState")
         Storage.setNumber(savedInstanceState.getInt("valueCounter"))
     }
-
-
 
 
 }
